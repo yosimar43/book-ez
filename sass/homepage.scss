@@ -73,10 +73,8 @@ body {
           padding: 6px 10px;
           z-index: 4;
           background-image: url(/img/fondo-balnco.jpg);
-          background-repeat:no-repeat;
+          background-repeat: no-repeat;
           background-size: cover;
-
-          
         }
       }
 
@@ -88,7 +86,7 @@ body {
       .saber-mas:hover ul li {
         background: none;
         margin: 0px 30px;
-        padding:3px;
+        padding: 3px;
         border-bottom: 1px solid rgba(27, 27, 27, 0.664);
       }
       .container-link {
@@ -109,10 +107,12 @@ body {
     }
 
     .container-link .login ul li {
-      &:last-child{
-        a{color:#FF0059 }
+      &:last-child {
+        a {
+          color: #ff0059;
+        }
         // background-color:rgb(0, 238, 255);
-        font-size:30px;
+        font-size: 30px;
       }
       display: inline-block;
       margin: 0px 10px;
@@ -159,7 +159,7 @@ main {
     }
     button {
       padding: 10px;
-      color:white;
+      color: white;
       background-color: rgb(158, 191, 253);
       border-radius: 10px;
       border: none;
@@ -219,11 +219,11 @@ main {
     .usuarios-porfesores {
       grid-area: 2/1 / span 2 / span 2;
       margin: auto;
-      h2{
+      h2 {
         padding-left: 20px;
       }
-      p{
-        padding:20px;
+      p {
+        padding: 20px;
       }
     }
     .usuarios-porfesores-img {
@@ -233,11 +233,11 @@ main {
       grid-area: 2/3 / span 2 / span 2;
     }
     .usuarios-estudiantes {
-      h2{
+      h2 {
         padding-left: 20px;
       }
-      p{
-        padding:20px;
+      p {
+        padding: 20px;
       }
 
       margin: auto;
@@ -249,5 +249,16 @@ main {
       height: 300px;
       grid-area: 4/1 / span 2 / span 2;
     }
+  }
+}
+
+.porque-importante {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    color: blue;
   }
 }
