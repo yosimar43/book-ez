@@ -1,0 +1,34 @@
+@media (max-width: 1000px) {
+  body {
+    .porque-importante {
+        width: 100%;
+      p {
+        font-size: 20px;
+      }
+    }
+    .ventajas {
+      height: 100vh;
+      justify-content:flex-start;
+      align-items: center;
+      .ventajas-img {
+        display: none;
+      }
+      .ventajas-text {
+        height: 80%;
+        justify-content:flex-start;
+      align-items: center;
+        h2 {
+          font-size: 1.2em;
+        }
+        p {
+          font-size: 0.8em;
+          letter-spacing: 0.2em;
+        }
+
+        button {
+          font-size:0.8em;
+        }
+      }
+    }
+  }
+}

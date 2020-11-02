@@ -1,3 +1,5 @@
+@import "mediaqueryhome";
+
 * {
   box-sizing: border-box;
 }
@@ -21,10 +23,7 @@ body::-webkit-scrollbar {
   width: 100%;
   height: 100px;
 }
-.content-false {
-  width: 100%;
-  height: 100px;
-}
+
 img {
   width: 100%;
   height: 100%;
@@ -45,6 +44,7 @@ body {
     .header-container {
       display: flex;
       align-items: center;
+      justify-content: space-evenly;
       .nombre {
         font-size: 35px;
         display: inline-block;
@@ -59,6 +59,7 @@ body {
         width: 20%;
         height: 60px;
         position: relative;
+        align-self: flex-end;
         padding-top: 10px;
 
         span {
@@ -72,14 +73,11 @@ body {
           left: 0px;
           padding: 6px 10px;
           z-index: 4;
-          background-image: url(/img/fondo-balnco.jpg);
-          background-repeat: no-repeat;
-          background-size: cover;
         }
       }
 
       .saber-mas:hover ul {
-        background: none;
+        background-color: white;
         box-shadow: 2px 2px 10px rgba(27, 27, 27, 0.664);
         display: block;
       }
@@ -93,6 +91,7 @@ body {
         width: 50%;
         display: inline-block;
         display: flex;
+
         justify-content: space-around;
       }
     }
@@ -105,7 +104,17 @@ body {
     .container-link .link-colegio ul li:hover {
       background-color: #cccc;
     }
-
+    .container-link .login {
+      position: relative;
+    }
+    .container-link .login:before {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 100%;
+      transform: rotate(20deg);
+      background: blue;
+    }
     .container-link .login ul li {
       &:last-child {
         a {
@@ -123,17 +132,19 @@ body {
 
 main {
   padding-top: 40px;
+
   .que-es {
     width: 80%;
-    height: 150px;
-    background-color: #e8eaf6;
+    min-height: 150px;
+    background: linear-gradient(to left, #955cf7, #8230aa, #f41a71, #f41a1a);
     border-radius: 50px;
     margin: auto;
-    margin-top: 50px;
+    padding: 5px 10px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
+    flex-wrap: wrap;
     .que-es-img {
       width: 100px;
       height: 100px;
@@ -144,22 +155,26 @@ main {
       }
     }
     .que-es-text {
-      width: 800px;
-
+      max-width: 800px;
+      margin: auto;
       h2 {
         margin: 0px;
-        color: #1a237e;
+        color: #1f2ed1;
         font-size: 2em;
         transform: rotate(3deg);
       }
       p {
         margin: 0px;
         font-size: 1em;
+        color: white;
       }
     }
-    button {
+    .que-es-link {
+      display: block;
       padding: 10px;
-      color: white;
+      a {
+        color: white;
+      }
       background-color: rgb(158, 191, 253);
       border-radius: 10px;
       border: none;
@@ -169,6 +184,9 @@ main {
   .como-funciona {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap-reverse;
+    overflow: hidden;
+
     .como-funciona-img {
       width: 600px;
       height: 400px;
@@ -181,23 +199,74 @@ main {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      position: relative;
+      padding-left: 30px;
       h2 {
         font-size: 2em;
+        text-decoration: underline;
       }
       p {
-        text-align: justify;
+        text-align: left;
       }
       text-align: center;
       width: 600px;
       height: 400px;
-      button {
-        justify-self: fle;
+      a {
+        width: 50%;
+        margin: auto;
+        margin-top: 0px;
         border: none;
         color: red;
-        background-color: #fff;
+      }
+
+      &:before {
+        content: "";
+        display: block;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: absolute;
+        background-color: rgba(107, 255, 248, 0.356);
+        top: 15%;
+        clip-path: polygon(
+          50% 0%,
+          61% 35%,
+          98% 35%,
+          68% 57%,
+          79% 91%,
+          50% 70%,
+          21% 91%,
+          32% 57%,
+          2% 35%,
+          39% 35%
+        );
+      }
+      &:after {
+        content: "";
+        display: block;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: absolute;
+        background-color: rgba(107, 255, 248, 0.356);
+        bottom: 30%;
+        right: 20px;
+        clip-path: polygon(
+          50% 0%,
+          61% 35%,
+          98% 35%,
+          68% 57%,
+          79% 91%,
+          50% 70%,
+          21% 91%,
+          32% 57%,
+          2% 35%,
+          39% 35%
+        );
       }
     }
   }
+
   .usuarios {
     padding: 0px, 20px;
     height: 150vh;
@@ -223,13 +292,13 @@ main {
         padding-left: 20px;
       }
       p {
-        padding: 20px;
+        padding: 19px;
       }
     }
     .usuarios-porfesores-img {
       margin: auto;
-      width: 50%;
-      height: 50%;
+      width: 70%;
+      height: 70%;
       grid-area: 2/3 / span 2 / span 2;
     }
     .usuarios-estudiantes {
@@ -239,14 +308,13 @@ main {
       p {
         padding: 20px;
       }
-
       margin: auto;
       grid-area: 4/3 / span 2 / span 2;
     }
     .usuarios-estudiantes-img {
-      width: 300px;
+      width: 100%;
       margin: auto;
-      height: 300px;
+      height: 100%;
       grid-area: 4/1 / span 2 / span 2;
     }
   }
@@ -254,11 +322,87 @@ main {
 
 .porque-importante {
   padding: 10px;
+  width: 80%;
+  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   h2 {
-    color: blue;
+    color: rgb(52, 52, 233);
+  }
+  p {
+    padding: 60px;
   }
 }
+.ventajas {
+  height: 70vh;
+  padding: 0%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  background-image: url(/img/ventajs-fondo.jpg);
+  background-size: cover;
+  .ventajas-text {
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+   
+
+    h2 {
+      color: #d519e3;
+      font-size: 2em;
+      display: block;
+      height: auto;
+    }
+    p {
+      color: rgb(51, 51, 51);
+      font-size: 1em;
+      height: auto;
+    }
+    button {
+      height: auto;
+      display: block;
+      background-color: #d519e3;
+      width: 40%;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 10px;
+
+      &:hover {
+        transform: scale(1.1);
+        transition-duration: .5s;
+        box-shadow: 1px 2px 5px rgb(121, 47, 182);
+        
+
+      }
+    }
+  }
+  .ventajas-text,
+  .ventajas-img {
+    width: 40%;
+    min-width: 350px;
+    height: 90%;
+    border: 1px solid #ccc;
+  }
+
+  .ventajas-new {
+    h2 {
+      color: #1a237e;
+    }
+    P {
+      color: BLACK;
+    }
+    button {
+      background-color: #1a237e;
+      
+    }
+  }
+}
+

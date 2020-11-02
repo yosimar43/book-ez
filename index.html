@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,7 +28,7 @@
           <ul>
             <li><a href="#">Profesores</a></li>
             <li><a href="#">Estudiantes</a></li>
-            <li><a href="#">Acudiente</a></li>
+            <li><a href="#">Acudientes</a></li>
           </ul>
         </div>
         <div class="container-link">
@@ -37,7 +37,7 @@
               <li>
                 <a
                   href="https://colegiocodema.wixsite.com/bogota"
-                  target="_blank"
+                  target="_blank" rel="nofollow"
                 >
                   Pagina del colegio</a
                 >
@@ -60,13 +60,7 @@
         <div class="que-es-img">
           <img src="img/phone-qeue-es.png" alt="" />
         </div>
-        <div
-          class="que-es-text"
-          data-aos="fade-left"
-          data-aos-anchor="#example-anchor"
-          data-aos-offset="500"
-          data-aos-duration="500"
-        >
+        <div class="que-es-text">
           <h2>BOOK-EZ</h2>
           <p>
             Implementa una solución en nuestro impacto de de papel en el colegio
@@ -74,7 +68,7 @@
             personalizada.
           </p>
         </div>
-        <button>Más información</button>
+        <div class="que-es-link"><a href="#">mas informacion</a></div>
       </div>
       <div class="content-false"></div>
 
@@ -87,14 +81,14 @@
           data-aos="flip-down"
           data-aos-duration="500"
         >
-          <h2>Como funciona?</h2>
+          <h2>¿Como funciona?</h2>
           <p>
             Es una plataforma educativa pensada para involucrar a los
             estudiantes de 10 y 11 en una educacion online personalizada e
             ificiente ademas es Segura y Simple. libre de interversion de
             terceros y completamente automatizada.
           </p>
-          <button>Ingresar</button>
+          <a href="#">Ingresar</a>
         </div>
       </div>
       <hr />
@@ -131,20 +125,39 @@
       </div>
       <div class="content-false"></div>
 
-      <div class="porque-importante">
+      <div class="porque-importante" data-aos="zoom-out">
         <h2>Porque es importante</h2>
-        <p>
-          las plataformas nos permiten optimizar tiempos, mejorar la calidad de
+        <p data-aos="flip-right">
+          Las plataformas nos permiten optimizar tiempos, mejorar la calidad de
           la información y que el estudiante se sienta identificado con su
           entorno tecnológico. Es importante considerar dar capacitación
           constante a los maestros, quienes estarán alimentando la base de
           conocimiento dentro de la plataforma.
         </p>
       </div>
+      <hr />
+      <div class="content-false"></div>
+      <div class="ventajas">
+        <div class="ventajas-img"><p>aqui va una imagen se pondra cuando aprenda a usar json</p></div>
+        <div class="ventajas-text" >
+          <h2>ventajas de BOOK-EZ</h2>
+          <p>
+            Book-ez esta libre de intervercion de terceros y la informacion
+            recopilada no sera compartida en ningun momento, los desarrolladores
+            tienen muy claro la importancia de la seguridad y la privacidad por
+            eso mismo los servidores son privados y estan diseñados
+            especificamente para el colegio .
+          </p>
+          <button id = "btn-ventajas" data-aos="fade-down-right" data-aos-duration="1100">conocer mas.</button>
+          
+          <!-- crear boton para mas ventrjas  -->
+        </div>
+      </div>
     </main>
     <hr />
     <div class="content-false"></div>
     <footer></footer>
+    <script src="js/index.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init();
