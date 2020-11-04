@@ -1,49 +1,51 @@
-/* this part of  code crate a new block in the html from div.ventajas>text and change its content   */
+/* Events start here and are delegated to the document.*/
 
-const $bnt_ventajas = document.getElementById("btn-ventajas");
+document.addEventListener("click", (e) => {
+  /* this if  create a new div in advantage whit other div that have a new paragraph whit add advantage  */
+  if (e.target.matches("#btn-ventajas")) {
+    const $btn_father = document.querySelector(".ventajas-text");
 
-const changeAdvantage = function (e) {
-  const $btn_father = document.querySelector(".ventajas-text");
-
-  if ($btn_father.hasChildNodes()) {
-    while ($btn_father.childNodes.length >= 1) {
-      $btn_father.removeChild($btn_father.firstChild);
+    if ($btn_father.hasChildNodes()) {
+      while ($btn_father.childNodes.length >= 1) {
+        $btn_father.removeChild($btn_father.firstChild);
+      }
     }
+
+    const $newTitleAdvantage = document.createElement("h2");
+    $newTitleAdvantage.appendChild(
+      document.createTextNode("Todas las ventajas")
+    );
+
+    const $newParagraphAdvantage = document.createElement("p");
+    $newParagraphAdvantage.appendChild(
+      document.createTextNode(
+        `Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+      Iste aliquid commodi, id molestias dolores provident dicta sed dignissimos ipsam sapiente.`
+      )
+    );
+    const $newParagraphAdvantage1 = document.createElement("p");
+    $newParagraphAdvantage1.appendChild(
+      document.createTextNode(
+        `Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+      Iste aliquid commodi, id molestias dolores provident dicta sed dignissimos ipsam sapiente.`
+      )
+    );
+
+    const $newButtonAdvantage = document.createElement("button");
+    $newButtonAdvantage.appendChild(document.createTextNode("regresar"));
+    $newButtonAdvantage.id = "ventajas-regresar";
+    $newButtonAdvantage.dataset.aos = "flip-right";
+    $newButtonAdvantage.dataset.aosDuration = "1100";
+
+    $btn_father.appendChild($newTitleAdvantage);
+    $btn_father.appendChild($newParagraphAdvantage);
+    $btn_father.appendChild($newParagraphAdvantage1);
+    $btn_father.appendChild($newButtonAdvantage);
+    $btn_father.className = "ventajas-text ventajas-new";
   }
 
-  const $newTitleAdvantage = document.createElement("h2");
-  $newTitleAdvantage.appendChild(document.createTextNode("Todas las ventajas"));
-
-  const $newParagraphAdvantage = document.createElement("p");
-  $newParagraphAdvantage.appendChild(
-    document.createTextNode(
-      `Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-      Iste aliquid commodi, id molestias dolores provident dicta sed dignissimos ipsam sapiente.`
-    )
-  );
-  const $newParagraphAdvantage1 = document.createElement("p");
-  $newParagraphAdvantage1.appendChild(
-    document.createTextNode(
-      `Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-      Iste aliquid commodi, id molestias dolores provident dicta sed dignissimos ipsam sapiente.`
-    )
-  );
-
-  const $newButtonAdvantage = document.createElement("button");
-  $newButtonAdvantage.appendChild(document.createTextNode("regresar"));
-  $newButtonAdvantage.id = "ventajas-regresar";
-  $newButtonAdvantage.dataset.aos = "flip-right";
-  $newButtonAdvantage.dataset.aosDuration = "1100";
-
-  $btn_father.appendChild($newTitleAdvantage);
-  $btn_father.appendChild($newParagraphAdvantage);
-  $btn_father.appendChild($newParagraphAdvantage1);
-  $btn_father.appendChild($newButtonAdvantage);
-  $btn_father.className = "ventajas-text ventajas-new";
-
-  $newButtonAdvantage.addEventListener("click", regresar);
-
-  function regresar() {
+  if (e.target.matches("#ventajas-regresar")) {
+    console.log("hola 1");
     const $btn_father = document.querySelector(".ventajas-text");
 
     if ($btn_father.hasChildNodes()) {
@@ -65,9 +67,9 @@ const changeAdvantage = function (e) {
     );
     const $boton = document.createElement("button");
     $boton.appendChild(document.createTextNode("conocer mas."));
+    $boton.id = "btn-ventajas";
     $boton.dataset.aos = "fade-down-right";
     $boton.dataset.aosDuration = "1100";
-    $boton.addEventListener("click", changeAdvantage);
 
     $btn_father.appendChild($h2);
     $btn_father.appendChild($pBack);
@@ -75,8 +77,17 @@ const changeAdvantage = function (e) {
 
     $btn_father.className = "ventajas-text";
   }
-};
+});
 
-$bnt_ventajas.addEventListener("click", changeAdvantage);
-
-/* here end  the code  of  html that create the new content in the label div advantage -text   */
+/* this  block code  make the effect of the header  */
+let positionPrincipal = window.pageYOffset; 
+window.addEventListener("scroll", function () {
+  let displacementCurrent = window.pageYOffset;
+  if (positionPrincipal >= displacementCurrent) {
+    document.querySelector("header").style.top = "0px";
+  } else {
+    document.querySelector("header").style.top = "-100px";
+  }
+  positionPrincipal = displacementCurrent;
+});
+/*  End block code  effect of the header  */
