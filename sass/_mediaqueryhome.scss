@@ -1,23 +1,23 @@
-@media (max-width: 1000px) {
+@media (max-width: 1250px) {
   body {
     .porque-importante {
-        width: 100%;
+      width: 100%;
       p {
         font-size: 20px;
       }
     }
     .ventajas {
       height: 100vh;
-      justify-content:space-around;
+      justify-content: center;
       align-items: center;
       .ventajas-img {
         display: none;
       }
       .ventajas-text {
         height: 80%;
-        margin:auto;
-        justify-content:flex-start;
-      align-items: center;
+        margin: auto;
+        justify-content: space-around;
+        align-items: center;
         h2 {
           font-size: 1.2em;
         }
@@ -27,7 +27,7 @@
         }
 
         button {
-          font-size:0.8em;
+          font-size: 0.8em;
         }
       }
     }
